@@ -6,7 +6,7 @@ interface PostListProps {
 }
 
 export function PostList({ posts }: PostListProps) {
-  if (posts.length === 0) {
+  if (!posts || !Array.isArray(posts) || posts.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-gray-50 p-8 text-center">
         <svg
